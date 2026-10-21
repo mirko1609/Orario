@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef4fa;
+    color: #17202a;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    padding: 35px 20px 15px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 34px;
+    color: #174a7e;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   SETTIMANA
+   ========================= */
+
+#settimana {
+    display: flex;
+    gap: 15px;
+
+    padding: 30px;
+
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   GIORNO
+   ========================= */
+
+.giorno {
+    flex: 1;
+    min-height: 300px;
+
+    padding: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #d5e3f0;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(30, 70, 110, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.giorno:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(30, 70, 110, 0.14);
+}
+
+.giorno h2 {
+    text-align: center;
+
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+
+    color: #174a7e;
+
+    border-bottom: 2px solid #dceaf6;
+}
+
+
+/* =========================
+   IMPEGNI
+   ========================= */
+
+.impegno {
+    padding: 12px;
+    margin-top: 15px;
+
+    background: #f5f9fd;
+
+    border: 1px solid #d5e3f0;
+    border-radius: 10px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.impegno:hover {
+    background: #e8f2fb;
+
+    transform: scale(1.02);
+}
+
+.impegno h3 {
+    margin-bottom: 5px;
+
+    color: #25384a;
+}
+
+.impegno p {
+    margin: 0;
+
+    color: #52718e;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   ORARIO SCOLASTICO
+   ========================= */
+
+#orario {
+    max-width: 1400px;
+
+    margin: 20px auto 50px;
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #d5e3f0;
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 15px rgba(30, 70, 110, 0.08);
+}
+
+
+/* =========================
+   INTESTAZIONE
+   ========================= */
+
+.intestazione {
+    display: grid;
+
+    grid-template-columns:
+        120px repeat(5, 1fr);
+}
+
+.intestazione div {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 55px;
+
+    padding: 10px;
+
+    background: #174a7e;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    border-right: 1px solid #d5e3f0;
+}
+
+.intestazione div:first-child {
+    border-radius: 10px 0 0 0;
+}
+
+.intestazione div:last-child {
+    border-radius: 0 10px 0 0;
+
+    border-right: none;
+}
+
+
+/* =========================
+   RIGA ORARIO
+   ========================= */
+
+.ora {
+    display: grid;
+
+    grid-template-columns:
+        120px repeat(5, 1fr);
+
+    border-bottom: 1px solid #d5e3f0;
+}
+
+.ora:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================
+   ORA
+   ========================= */
+
+.ora h2 {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 65px;
+
+    padding: 10px;
+
+    background: #e8f2fb;
+
+    color: #174a7e;
+
+    font-size: 15px;
+
+    border-right: 1px solid #d5e3f0;
+}
+
+
+/* =========================
+   MATERIA
+   ========================= */
+
+.materia {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 65px;
+
+    padding: 10px;
+
+    background: #f5f9fd;
+
+    text-align: center;
+
+    border-right: 1px solid #d5e3f0;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.materia:last-child {
+    border-right: none;
+}
+
+.materia:hover {
+    background: #e8f2fb;
+}
+
+.materia h3 {
+    color: #25384a;
+
+    font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1000px) {
+
+    #settimana {
+        flex-wrap: wrap;
+    }
+
+    .giorno {
+        flex: 1 1 calc(50% - 15px);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 25px 15px 10px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+
+    /* Settimana */
+
+    #settimana {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .giorno {
+        width: 100%;
+    }
+
+
+    /* Orario */
+
+    #orario {
+        margin: 20px 10px 40px;
+        padding: 10px;
+
+        overflow-x: auto;
+    }
+
+    .intestazione,
+    .ora {
+        min-width: 750px;
+    }
+}
